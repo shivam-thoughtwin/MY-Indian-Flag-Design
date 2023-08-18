@@ -1,0 +1,108 @@
+body{
+  background:#E6BF83;
+  height:100vh;
+  margin:0px;
+}
+.container{
+/*   display:flex;
+  justify-content:center; */
+  margin:30px 100px;
+}
+.stick{
+  height:600px;
+  width:20px;
+  background:black;
+  border-top-right-radius:100px;
+  border-top-left-radius:100px;
+  position:fixed;
+  z-index:1
+}
+.flag-container{
+  display:flex;
+  flex-direction:column;
+  padding-top:20px;
+/*   border:1px solid red; */
+  height:300px;
+ clip-path: polygon(32% 6%, 70% 0%, 100% 8%, 100% 99%, 70% 93%, 27% 100%, 0 95%, 0 0);
+  
+   animation:wave 1.5s ease-in-out infinite alternate ;
+/*     transform-style: preserve-3d; */
+  transition:1s;
+}
+@keyframes wave{
+  0%{
+    clip-path: polygon(32% 6%, 70% 0%, 100% 8%, 100% 99%, 70% 93%, 27% 100%, 0 95%, 0 0);
+  }
+  25%{
+    clip-path: polygon(32% 4%, 70% 2%, 100% 5%, 100% 96%, 70% 95%, 27% 98%, 0 95%, 0 0);
+  }
+  50%{
+    clip-path: polygon(32% 2%, 70% 4%, 100% 3%, 100% 94%, 70% 97%, 27% 96%, 0 95%, 0 0);
+  }
+  75%{
+    clip-path: polygon(32% 1%, 70% 5%, 100% 2%, 100% 91%, 70% 98%, 27% 95%, 0 95%, 0 0);
+  }
+  100%{
+  clip-path: polygon(31% 0, 70% 6%, 100% 0, 100% 89%, 70% 100%, 27% 93%, 0 95%, 0 0);
+  }
+}
+
+.flag{
+  height:100px;
+  width:450px;
+  background:black;
+}
+
+.orange{
+  background:orange;
+/*    animation:wave 1s ease-in-out infinite alternate ; */
+/*   width:450px; */
+  animation:width-move 4s ease
+}
+@keyframes width-move{
+  from{width:0px}
+  to{width:450px}
+}
+
+.white{
+  background:white;
+  display:flex;
+  justify-content:center;
+/*   border-radius:0% 0% 0% 0%; */
+  
+/*   animation:white 8s ease forwards */
+   animation:width-move 4s ease
+
+}
+.flag .ashok-chakra{
+  height:100px;
+  animation:ashoka 4s linear infinite;
+/*   animation-delay: 2s; */
+}
+.green{
+  background:green;
+  
+/*   border-radius:0% 0% 50% 0%; */
+  
+/*   animation:green 8s ease forwards; */
+  animation:width-move 4s ease
+  
+}
+
+@keyframes ashoka{
+  0%{
+    transform:rotate(0deg);
+  }
+  100%{
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes flag{
+  0%{
+    transform:translate(0px,0px)
+  }
+  100%{
+    transform:translate(400px,0px)
+  }
+}
